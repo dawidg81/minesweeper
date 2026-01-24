@@ -5,7 +5,7 @@ using namespace std;
 int main(){
 	int choice;
 
-	while(inGame == false){
+	while(!inGame){
 		cout << "Welcome to minesweeper 0.1.0\n";
 		cout << "\n";
 		cout << "Select difficulty:\n"

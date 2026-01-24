@@ -2,8 +2,6 @@
 #include "game.hpp"
 using namespace std;
 
-bool inGame = false;
-
 void game(int diff){
 	int boardWidth;
 	int boardHeight;
