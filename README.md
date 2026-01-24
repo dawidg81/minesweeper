@@ -2,8 +2,6 @@
 
 A reimplementation of minesweeper game in C++ in terminal.
 
-This project is being written and coded in Vim.
-
 ## Concept
 
 There are going to be 3 difficulties and one additional option where user can determine plot size and amount of mines by himself.
