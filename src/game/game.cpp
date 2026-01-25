@@ -4,6 +4,12 @@
 #include <cstdio>
 #include <iostream>
 
+using namespace std;
+
+void Game::editDiff(){
+    cout << "Now editing custom difficulty" << endl;
+}
+
 void Game::initDiff(int diff) {
     switch (diff) {
         case 0:
