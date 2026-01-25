@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 #include "globals.hpp"
 using namespace std;
@@ -58,5 +59,11 @@ void game(int diff){
 			}
 
 			break;
+	}
+
+	for(int i = 0; i < boardHeight; i++){
+		for(int j = 0; j < boardWidth; j++){
+			board[i][j] = rand() % 1;
+		}
 	}
 }
