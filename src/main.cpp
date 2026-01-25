@@ -1,5 +1,5 @@
 #include <iostream>
-#include "game/game.hpp"
+#include "game/globals.hpp"
 using namespace std;
 
 int main(){
