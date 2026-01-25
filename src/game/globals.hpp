@@ -1,8 +1,6 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include <iostream>
-
 class Game {
 private:
     static constexpr int MAX_W = 32;
