@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <cstdlib>
 #include <iostream>
 #include <sys/stat.h>
@@ -14,8 +15,8 @@ private:
 	int boardWidth;
 	int boardHeight;
 
-	bool bombmap[MAX_H][MAX_W];
-	int displaymap[MAX_H][MAX_W];
+	bool bombMap[MAX_H][MAX_W];
+	int tileMap[MAX_H][MAX_W];
 
 	int mines;
 
@@ -75,7 +76,25 @@ public:
 	void initBoard(){
 		for(int i = 0; i < boardHeight; i++){
 			for(int j = 0; j < boardWidth; j++){
-				bombmap[i][j] = rand() % 2;
+				// false = no bomb; true = bomb;
+				bombMap[i][j] = rand() % 2;
+			}
+		}
+
+		for (int i = 0; i < boardHeight; i++) {
+			for (int j = 0; j < boardWidth; j++) {
+				// 0 = unrevealed tile
+				// 1 = revealed tile
+				// from 2 to 10 - revealed tiles with numbers
+				tileMap[i][j] = 0;
+			}
+		}
+	}
+
+	void displayBoard(){
+		for (int i = 0; i < boardHeight; i++) {
+			for (int j = 0; j < boardWidth; j++) {
+				putchar(tileMap[i][j]);
 			}
 		}
 	}
