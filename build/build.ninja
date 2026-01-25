@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: MyProject
+# Project: minesweeper
 # Configurations: 
 # =============================================================================
 
@@ -36,44 +36,44 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = D$:/code/minesweeper/build/
 # =============================================================================
-# Object build statements for EXECUTABLE target my_project
+# Object build statements for EXECUTABLE target minesweeper
 
 
 #############################################
-# Order-only phony target for my_project
+# Order-only phony target for minesweeper
 
-build cmake_object_order_depends_target_my_project: phony || .
+build cmake_object_order_depends_target_minesweeper: phony || .
 
-build CMakeFiles/my_project.dir/src/main.cpp.obj: CXX_COMPILER__my_project_unscanned_ D$:/code/minesweeper/src/main.cpp || cmake_object_order_depends_target_my_project
-  DEP_FILE = CMakeFiles\my_project.dir\src\main.cpp.obj.d
+build CMakeFiles/minesweeper.dir/src/main.cpp.obj: CXX_COMPILER__minesweeper_unscanned_ D$:/code/minesweeper/src/main.cpp || cmake_object_order_depends_target_minesweeper
+  DEP_FILE = CMakeFiles\minesweeper.dir\src\main.cpp.obj.d
   FLAGS = -std=gnu++1z
   INCLUDES = -ID:/code/minesweeper/src
-  OBJECT_DIR = CMakeFiles\my_project.dir
-  OBJECT_FILE_DIR = CMakeFiles\my_project.dir\src
+  OBJECT_DIR = CMakeFiles\minesweeper.dir
+  OBJECT_FILE_DIR = CMakeFiles\minesweeper.dir\src
 
-build CMakeFiles/my_project.dir/src/game/game.cpp.obj: CXX_COMPILER__my_project_unscanned_ D$:/code/minesweeper/src/game/game.cpp || cmake_object_order_depends_target_my_project
-  DEP_FILE = CMakeFiles\my_project.dir\src\game\game.cpp.obj.d
+build CMakeFiles/minesweeper.dir/src/game/game.cpp.obj: CXX_COMPILER__minesweeper_unscanned_ D$:/code/minesweeper/src/game/game.cpp || cmake_object_order_depends_target_minesweeper
+  DEP_FILE = CMakeFiles\minesweeper.dir\src\game\game.cpp.obj.d
   FLAGS = -std=gnu++1z
   INCLUDES = -ID:/code/minesweeper/src
-  OBJECT_DIR = CMakeFiles\my_project.dir
-  OBJECT_FILE_DIR = CMakeFiles\my_project.dir\src\game
+  OBJECT_DIR = CMakeFiles\minesweeper.dir
+  OBJECT_FILE_DIR = CMakeFiles\minesweeper.dir\src\game
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target my_project
+# Link build statements for EXECUTABLE target minesweeper
 
 
 #############################################
-# Link the executable my_project.exe
+# Link the executable minesweeper.exe
 
-build my_project.exe: CXX_EXECUTABLE_LINKER__my_project_ CMakeFiles/my_project.dir/src/main.cpp.obj CMakeFiles/my_project.dir/src/game/game.cpp.obj
+build minesweeper.exe: CXX_EXECUTABLE_LINKER__minesweeper_ CMakeFiles/minesweeper.dir/src/main.cpp.obj CMakeFiles/minesweeper.dir/src/game/game.cpp.obj
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\my_project.dir
+  OBJECT_DIR = CMakeFiles\minesweeper.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = my_project.exe
-  TARGET_IMPLIB = libmy_project.dll.a
-  TARGET_PDB = my_project.exe.dbg
+  TARGET_FILE = minesweeper.exe
+  TARGET_IMPLIB = libminesweeper.dll.a
+  TARGET_PDB = minesweeper.exe.dbg
 
 
 #############################################
@@ -101,7 +101,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build my_project: phony my_project.exe
+build minesweeper: phony minesweeper.exe
 
 # =============================================================================
 # Folder targets.
@@ -111,7 +111,7 @@ build my_project: phony my_project.exe
 #############################################
 # Folder: D:/code/minesweeper/build
 
-build all: phony my_project.exe
+build all: phony minesweeper.exe
 
 # =============================================================================
 # Built-in targets

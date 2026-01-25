@@ -125,7 +125,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=MyProject
+CMAKE_PROJECT_NAME:STATIC=minesweeper
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=D:/MinGW/bin/ranlib.exe
@@ -218,6 +218,15 @@ MyProject_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 MyProject_SOURCE_DIR:STATIC=D:/code/minesweeper
+
+//Value Computed by CMake
+minesweeper_BINARY_DIR:STATIC=D:/code/minesweeper/build
+
+//Value Computed by CMake
+minesweeper_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+minesweeper_SOURCE_DIR:STATIC=D:/code/minesweeper
 
 
 ########################

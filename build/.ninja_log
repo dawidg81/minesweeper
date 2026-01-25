@@ -1,3 +1,6 @@
 # ninja log v6
-1	286	7910530735292674	CMakeFiles/my_project.dir/src/main.cpp.obj	ba0350b409c2bcde
 7	291	7910530735303785	CMakeFiles/my_project.dir/src/game/game.cpp.obj	c7697ab1edbf7234
+1	286	7910530735292674	CMakeFiles/my_project.dir/src/main.cpp.obj	ba0350b409c2bcde
+1	166	7910531477594577	build.ninja	45552195ee7b13a7
+29	303	7910531478315183	CMakeFiles/minesweeper.dir/src/main.cpp.obj	56365d14a6f6ed23
+34	310	7910531478315183	CMakeFiles/minesweeper.dir/src/game/game.cpp.obj	a385ee6493ade9b6
