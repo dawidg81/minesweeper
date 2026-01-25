@@ -75,7 +75,7 @@ public:
 	void initBoard(){
 		for(int i = 0; i < boardHeight; i++){
 			for(int j = 0; j < boardWidth; j++){
-				bombmap[i][j] = rand() % 1;
+				bombmap[i][j] = rand() % 2;
 			}
 		}
 	}
