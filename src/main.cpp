@@ -23,7 +23,7 @@ int main(){
 	} else if(choice == 3){
 		game.initDiff(2);
 	} else if(choice == 4){
-		game.initDiff(3);
+		game.editDiff();
 	}
 
 	return 0;

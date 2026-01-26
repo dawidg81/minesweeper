@@ -13,6 +13,7 @@ int Game::editDiff(){
 
     std::cout << "Board width: ";
     if(util.catchReturn(util.catchInputInt(Game::boardWidth)) != 0) return 1;
+    std::cout << Game::boardWidth;
 
     std::cout << "Board height: ";
     if(util.catchReturn(util.catchInputInt(Game::boardHeight)) != 0) return 1;
