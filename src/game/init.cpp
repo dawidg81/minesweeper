@@ -1,6 +1,8 @@
-#include <iostream>
-
 #include "Game.hpp"
+
+#include <cstdlib>
+#include <cstdio>
+#include <iostream>
 
 void Game::initDiff(int diff) {
     switch (diff) {
@@ -23,4 +25,14 @@ void Game::initDiff(int diff) {
             std::cout << "Editing game parameters\n";
             break;
         }
+}
+
+void Game::initBoard() {
+    for (int i = 0; i < boardHeight; i++)
+        for (int j = 0; j < boardWidth; j++)
+            bombMap[i][j] = rand() % 2;
+
+    for (int i = 0; i < boardHeight; i++)
+        for (int j = 0; j < boardWidth; j++)
+            tileMap[i][j] = 0;
 }
