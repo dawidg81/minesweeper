@@ -1,4 +1,4 @@
-#include "globals.hpp"
+#include "Game.hpp"
 
 #include <cstdlib>
 #include <cstdio>
