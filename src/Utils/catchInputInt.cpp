@@ -3,7 +3,7 @@
 #include <cstdio>
 #include <iostream>
 
-int Utils::catchInputInt(int input){
+int Utils::catchInputInt(int* input){
     std::cin >> input;
     
     if (std::cin.fail()) {

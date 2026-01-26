@@ -4,7 +4,7 @@
 
 class Utils{
     public:
-    int catchInputInt(int input);
+    int catchInputInt(int* input);
     int catchReturn(int renum);
 };
 
