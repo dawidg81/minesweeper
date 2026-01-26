@@ -15,7 +15,7 @@ private:
     int mines;
 
 public:
-    void editDiff();
+    int editDiff();
     void initDiff(int diff);
     void initBoard();
     void displayBoard();

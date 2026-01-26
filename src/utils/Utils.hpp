@@ -4,7 +4,8 @@
 
 class Utils{
     public:
-    void input(std::string input);
+    int catchInputInt(int input);
+    int catchReturn(int renum);
 };
 
 #endif
