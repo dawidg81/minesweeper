@@ -8,7 +8,7 @@ int Utils::catchInputInt(int input){
     
     if (std::cin.fail()) {
         std::cout << "error: Input failed" << std::endl;
-        return 1;    
+        return 1;
     }
 
     return 0;

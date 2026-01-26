@@ -1,5 +1,5 @@
 #include <iostream>
-#include "game/Game.hpp"
+#include "Game/Game.hpp"
 using namespace std;
 
 int main(){
