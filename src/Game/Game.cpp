@@ -42,3 +42,4 @@ void Game::initBoard() {
         }
     }
 }
+
