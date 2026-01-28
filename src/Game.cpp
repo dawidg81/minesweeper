@@ -43,3 +43,28 @@ void Game::initBoard() {
     }
 }
 
+int Game::editDiff(){
+    Utils util;
+
+    std::cout << "Now editing custom difficulty" << std::endl;
+
+    std::cout << "Board width: ";
+    if(util.catchReturn(util.catchInputInt(Game::boardWidth)) != 0) return 1;
+    std::cout << Game::boardWidth;
+
+    std::cout << "Board height: ";
+    if(util.catchReturn(util.catchInputInt(Game::boardHeight)) != 0) return 1;
+
+    std::cout << "Mines: ";
+    if(util.catchReturn(util.catchInputInt(Game::mines)) != 0) return 1;
+
+    return 0;
+}
+
+void Game::displayBoard() {
+    for (int i = 0; i < boardHeight; i++) {
+        for (int j = 0; j < boardWidth; j++)
+            putchar(tileMap[i][j]);
+        putchar('\n');
+    }
+}
