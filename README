@@ -1,0 +1,27 @@
+                      # minesweeper #
+
+A reimplementation of minesweeper game in C++ in terminal.
+
+  ## Concept ##
+
+There are going to be 3 difficulties and one additional
+option where user can determine plot size and amount of mines
+by himself.
+
+Game commands are going to be read from normal std::cin input
+method. The project is not going to use curses, ncurses or
+lncurses libraries for now.
+
+Plot is going to be displayed (printed) on the upper left
+side of the screen, eventually with colors. Here are planned
+symbols of in-game elements:
+
+ #  - unrevealed tile.
+
+ .  - revealed tile (no mines around).
+
+ X  - (red color) bomb.
+
+Colorful numbers from `1` (1 mine around the revealed tile) to
+(maximum) `8` (8 mines around the revealed tile) - numbers
+saying how much mines are around it.
