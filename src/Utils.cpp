@@ -4,7 +4,7 @@
 #include <ostream>
 
 int Utils::catchInputInt(int* input){
-    std::cin >> input;
+    std::cin >> *input;
     
     if (std::cin.fail()) {
         std::cout << "error: Input failed" << std::endl;

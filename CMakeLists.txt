@@ -3,7 +3,9 @@ project(minesweeper)
 set(CMAKE_CXX_STANDARD 20)
 
 set(SOURCE_FILES
-src/*
+src/main.cpp
+src/Game.cpp
+src/Utils.cpp
 )
 
 add_executable(minesweeper ${SOURCE_FILES})
