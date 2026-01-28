@@ -1,5 +1,5 @@
 #include "Game.hpp"
-#include "../Utils/Utils.hpp"
+#include "Utils.hpp"
 
 #include <cstdlib>
 #include <cstdio>
