@@ -8,4 +8,4 @@ src/Game/*,
 src/Utils/*,
 )
 
-add_executable(saper, ${SOURCE_FILES})
+add_executable(minesweeper ${SOURCE_FILES})
