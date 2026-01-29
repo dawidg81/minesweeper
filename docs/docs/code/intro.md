@@ -1,4 +1,4 @@
-# Code documentation
+# About
 
 This site documentates minesweeper code.
 
