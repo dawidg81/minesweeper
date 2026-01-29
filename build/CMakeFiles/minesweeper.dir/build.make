@@ -69,24 +69,10 @@ include CMakeFiles/minesweeper.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/minesweeper.dir/flags.make
 
-CMakeFiles/minesweeper.dir/src/main.cpp.o: CMakeFiles/minesweeper.dir/flags.make
-CMakeFiles/minesweeper.dir/src/main.cpp.o: /home/dawidg81/minesweeper/src/main.cpp
-CMakeFiles/minesweeper.dir/src/main.cpp.o: CMakeFiles/minesweeper.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dawidg81/minesweeper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/minesweeper.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minesweeper.dir/src/main.cpp.o -MF CMakeFiles/minesweeper.dir/src/main.cpp.o.d -o CMakeFiles/minesweeper.dir/src/main.cpp.o -c /home/dawidg81/minesweeper/src/main.cpp
-
-CMakeFiles/minesweeper.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/minesweeper.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dawidg81/minesweeper/src/main.cpp > CMakeFiles/minesweeper.dir/src/main.cpp.i
-
-CMakeFiles/minesweeper.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minesweeper.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dawidg81/minesweeper/src/main.cpp -o CMakeFiles/minesweeper.dir/src/main.cpp.s
-
 CMakeFiles/minesweeper.dir/src/Game.cpp.o: CMakeFiles/minesweeper.dir/flags.make
 CMakeFiles/minesweeper.dir/src/Game.cpp.o: /home/dawidg81/minesweeper/src/Game.cpp
 CMakeFiles/minesweeper.dir/src/Game.cpp.o: CMakeFiles/minesweeper.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dawidg81/minesweeper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/minesweeper.dir/src/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dawidg81/minesweeper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/minesweeper.dir/src/Game.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minesweeper.dir/src/Game.cpp.o -MF CMakeFiles/minesweeper.dir/src/Game.cpp.o.d -o CMakeFiles/minesweeper.dir/src/Game.cpp.o -c /home/dawidg81/minesweeper/src/Game.cpp
 
 CMakeFiles/minesweeper.dir/src/Game.cpp.i: cmake_force
@@ -100,7 +86,7 @@ CMakeFiles/minesweeper.dir/src/Game.cpp.s: cmake_force
 CMakeFiles/minesweeper.dir/src/Utils.cpp.o: CMakeFiles/minesweeper.dir/flags.make
 CMakeFiles/minesweeper.dir/src/Utils.cpp.o: /home/dawidg81/minesweeper/src/Utils.cpp
 CMakeFiles/minesweeper.dir/src/Utils.cpp.o: CMakeFiles/minesweeper.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dawidg81/minesweeper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/minesweeper.dir/src/Utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dawidg81/minesweeper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/minesweeper.dir/src/Utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minesweeper.dir/src/Utils.cpp.o -MF CMakeFiles/minesweeper.dir/src/Utils.cpp.o.d -o CMakeFiles/minesweeper.dir/src/Utils.cpp.o -c /home/dawidg81/minesweeper/src/Utils.cpp
 
 CMakeFiles/minesweeper.dir/src/Utils.cpp.i: cmake_force
@@ -111,18 +97,32 @@ CMakeFiles/minesweeper.dir/src/Utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minesweeper.dir/src/Utils.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dawidg81/minesweeper/src/Utils.cpp -o CMakeFiles/minesweeper.dir/src/Utils.cpp.s
 
+CMakeFiles/minesweeper.dir/src/main.cpp.o: CMakeFiles/minesweeper.dir/flags.make
+CMakeFiles/minesweeper.dir/src/main.cpp.o: /home/dawidg81/minesweeper/src/main.cpp
+CMakeFiles/minesweeper.dir/src/main.cpp.o: CMakeFiles/minesweeper.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dawidg81/minesweeper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/minesweeper.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/minesweeper.dir/src/main.cpp.o -MF CMakeFiles/minesweeper.dir/src/main.cpp.o.d -o CMakeFiles/minesweeper.dir/src/main.cpp.o -c /home/dawidg81/minesweeper/src/main.cpp
+
+CMakeFiles/minesweeper.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/minesweeper.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dawidg81/minesweeper/src/main.cpp > CMakeFiles/minesweeper.dir/src/main.cpp.i
+
+CMakeFiles/minesweeper.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/minesweeper.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dawidg81/minesweeper/src/main.cpp -o CMakeFiles/minesweeper.dir/src/main.cpp.s
+
 # Object files for target minesweeper
 minesweeper_OBJECTS = \
-"CMakeFiles/minesweeper.dir/src/main.cpp.o" \
 "CMakeFiles/minesweeper.dir/src/Game.cpp.o" \
-"CMakeFiles/minesweeper.dir/src/Utils.cpp.o"
+"CMakeFiles/minesweeper.dir/src/Utils.cpp.o" \
+"CMakeFiles/minesweeper.dir/src/main.cpp.o"
 
 # External object files for target minesweeper
 minesweeper_EXTERNAL_OBJECTS =
 
-minesweeper: CMakeFiles/minesweeper.dir/src/main.cpp.o
 minesweeper: CMakeFiles/minesweeper.dir/src/Game.cpp.o
 minesweeper: CMakeFiles/minesweeper.dir/src/Utils.cpp.o
+minesweeper: CMakeFiles/minesweeper.dir/src/main.cpp.o
 minesweeper: CMakeFiles/minesweeper.dir/build.make
 minesweeper: CMakeFiles/minesweeper.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dawidg81/minesweeper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable minesweeper"
