@@ -1,1 +1,2 @@
+runs_minesweeper 1 0.00228847
 ---
