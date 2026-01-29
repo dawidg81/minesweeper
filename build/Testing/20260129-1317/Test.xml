@@ -24,8 +24,8 @@
 	ProcessorClockFrequency="0"
 	>
 	<Testing>
-		<StartDateTime>Jan 29 14:26 CET</StartDateTime>
-		<StartTestTime>1769693192</StartTestTime>
+		<StartDateTime>Jan 29 14:27 CET</StartDateTime>
+		<StartTestTime>1769693261</StartTestTime>
 		<TestList>
 			<Test>./runs_minesweeper</Test>
 		</TestList>
@@ -36,7 +36,7 @@
 			<FullCommandLine>/home/dawidg81/minesweeper/build/minesweeper</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.00228847</Value>
+					<Value>0.00266101</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -63,8 +63,8 @@ Difficulty:
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>Jan 29 14:26 CET</EndDateTime>
-		<EndTestTime>1769693192</EndTestTime>
+		<EndDateTime>Jan 29 14:27 CET</EndDateTime>
+		<EndTestTime>1769693261</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

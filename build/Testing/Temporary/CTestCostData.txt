@@ -1,2 +1,2 @@
-runs_minesweeper 1 0.00228847
+runs_minesweeper 2 0.00247474
 ---
