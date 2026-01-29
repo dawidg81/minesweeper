@@ -13,3 +13,10 @@ file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS
 add_executable(minesweeper)
 
 target_sources(minesweeper PRIVATE ${SOURCE_FILES})
+
+enable_testing()
+
+add_test(
+    NAME runs_minesweeper
+    COMMAND minesweeper
+)

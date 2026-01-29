@@ -1,3 +1,4 @@
 /home/dawidg81/minesweeper/build/CMakeFiles/minesweeper.dir
+/home/dawidg81/minesweeper/build/CMakeFiles/test.dir
 /home/dawidg81/minesweeper/build/CMakeFiles/edit_cache.dir
 /home/dawidg81/minesweeper/build/CMakeFiles/rebuild_cache.dir
