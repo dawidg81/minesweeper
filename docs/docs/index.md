@@ -6,7 +6,7 @@ A reimplementation of minesweeper game in C++ in terminal.
 
 There are going to be 3 difficulties and one additional option where user can determine plot size and amount of mines by himself.
 
-Game commands are going to be read from normal std::cin input method. The project is not going to use curses, ncurses or lncurses libraries for now.
+Game commands are going to be read from normal `std::cin` input method. The project is not going to use curses, ncurses or lncurses libraries for now.
 
 Plot is going to be displayed (printed) on the upper left side of the screen, eventually with colors. Here are planned symbols of in-game elements:
 

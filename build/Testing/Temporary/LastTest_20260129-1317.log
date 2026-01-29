@@ -1,26 +1,3 @@
-Start testing: Jan 29 14:27 CET
+Start testing: Jan 29 16:50 CET
 ----------------------------------------------------------
-1/1 Testing: runs_minesweeper
-1/1 Test: runs_minesweeper
-Command: "/home/dawidg81/minesweeper/build/minesweeper"
-Directory: /home/dawidg81/minesweeper/build
-"runs_minesweeper" start time: Jan 29 14:27 CET
-Output:
-----------------------------------------------------------
-Welcome to minesweeper 0.1.0
-
-Select difficulty:
-1. Easy
-2. Medium
-3. Hard
-4. Custom
-Difficulty: 
-<end of output>
-Test time =   0.00 sec
-----------------------------------------------------------
-Test Passed.
-"runs_minesweeper" end time: Jan 29 14:27 CET
-"runs_minesweeper" time elapsed: 00:00:00
-----------------------------------------------------------
-
-End testing: Jan 29 14:27 CET
+End testing: Jan 29 16:50 CET
