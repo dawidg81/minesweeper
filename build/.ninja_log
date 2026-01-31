@@ -1,0 +1,4 @@
+# ninja log v6
+18	1606	7913148321555359	CMakeFiles/minesweeper.dir/src/Game/init.cpp.obj	417edab851bcf91c
+1	1613	7913148321285368	CMakeFiles/minesweeper.dir/src/main.cpp.obj	f5efa4a7209938f4
+12	1616	7913148321495149	CMakeFiles/minesweeper.dir/src/Game/display.cpp.obj	c176474163789830
