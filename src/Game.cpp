@@ -13,7 +13,7 @@ void Game::initDiff(int diff) {
             boardHeight = 9;
             mines       = 9;
             break;
-        case 1:
+        case 1: 
             boardWidth  = 16;
             boardHeight = 16;
             mines       = 12;
