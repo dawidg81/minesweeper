@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/minesweeper.dir/src/Game.cpp.o"
   "CMakeFiles/minesweeper.dir/src/Game.cpp.o.d"
-  "CMakeFiles/minesweeper.dir/src/Utils.cpp.o"
-  "CMakeFiles/minesweeper.dir/src/Utils.cpp.o.d"
   "CMakeFiles/minesweeper.dir/src/main.cpp.o"
   "CMakeFiles/minesweeper.dir/src/main.cpp.o.d"
   "minesweeper"

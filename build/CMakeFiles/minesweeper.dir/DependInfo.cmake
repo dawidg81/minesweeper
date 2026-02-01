@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dawidg81/minesweeper/src/Game.cpp" "CMakeFiles/minesweeper.dir/src/Game.cpp.o" "gcc" "CMakeFiles/minesweeper.dir/src/Game.cpp.o.d"
-  "/home/dawidg81/minesweeper/src/Utils.cpp" "CMakeFiles/minesweeper.dir/src/Utils.cpp.o" "gcc" "CMakeFiles/minesweeper.dir/src/Utils.cpp.o.d"
   "/home/dawidg81/minesweeper/src/main.cpp" "CMakeFiles/minesweeper.dir/src/main.cpp.o" "gcc" "CMakeFiles/minesweeper.dir/src/main.cpp.o.d"
   )
 

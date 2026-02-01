@@ -6,7 +6,6 @@ cmake_policy(SET CMP0009 NEW)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/dawidg81/minesweeper/src/*.cpp")
 set(OLD_GLOB
   "/home/dawidg81/minesweeper/src/Game.cpp"
-  "/home/dawidg81/minesweeper/src/Utils.cpp"
   "/home/dawidg81/minesweeper/src/main.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
