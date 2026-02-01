@@ -101,6 +101,7 @@ int Game::editDiff(){
 9 - revealed tile with 8 bomb around
 
 */
+
 void Game::displayBoard() {
     for (int i = 0; i < boardHeight; i++) {
         for (int j = 0; j < boardWidth; j++) {
