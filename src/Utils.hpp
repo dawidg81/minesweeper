@@ -1,11 +1,9 @@
 #include <string>
 
-#ifndef UTILS_HPP
+#pragma once
 
 class Utils{
 	public:
 		int catchInputInt(int* input);
 		int catchReturn(int renum);
 };
-
-#endif
