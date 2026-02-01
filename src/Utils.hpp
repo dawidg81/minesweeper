@@ -3,7 +3,7 @@
 #pragma once
 
 class Utils{
-	public:
-		int catchInputInt(int* input);
-		int catchReturn(int renum);
+public:
+	int catchInputInt(int* input);
+	int catchReturn(int renum);
 };
