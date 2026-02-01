@@ -61,10 +61,28 @@ int Game::editDiff(){
     std::cout << "Now editing custom difficulty" << std::endl;
 
     std::cout << "Board width: ";
+    std::cin >> boardWidth;
+
+    if (boardWidth > MAX_W) {
+        std::cout << "Board width can't be more than " << MAX_W << " tiles." << std::endl;    
+        return 1;
+    }
 
     std::cout << "Board height: ";
+    std::cin >> boardHeight;
+
+    if (boardHeight > MAX_H) {
+        std::cout << "Board height can't be more than " << MAX_H << " tiles." << std::endl;    
+        return 1;
+    }
 
     std::cout << "Mines: ";
+    std::cin >> mines;
+
+    if (mines > 8 || mines > (boardWidth * boardHeight)) {
+        std::cout << "There can't be more than " << mines << "mines." << std::endl;    
+        return 1;
+    }
 
     return 0;
 }
