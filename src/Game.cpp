@@ -1,5 +1,4 @@
 #include "Game.hpp"
-#include "Utils.hpp"
 
 #include <cstdlib>
 #include <cstdio>
@@ -44,19 +43,14 @@ void Game::initBoard() {
 }
 
 int Game::editDiff(){
-    Utils util;
 
     std::cout << "Now editing custom difficulty" << std::endl;
 
     std::cout << "Board width: ";
-    if(util.catchReturn(util.catchInputInt(&boardWidth)) != 0) return 1;
-    std::cout << Game::boardWidth;
 
     std::cout << "Board height: ";
-    if(util.catchReturn(util.catchInputInt(&boardHeight)) != 0) return 1;
 
     std::cout << "Mines: ";
-    if(util.catchReturn(util.catchInputInt(&mines)) != 0) return 1;
 
     return 0;
 }
