@@ -1,5 +1,4 @@
-#ifndef GAME_HPP
-#define GAME_HPP
+#pragma once
 
 class Game {
 private:
@@ -24,4 +23,3 @@ public:
     void input();
 };
 
-#endif
