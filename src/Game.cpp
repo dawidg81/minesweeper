@@ -144,7 +144,16 @@ void Game::input(){
 	std::cin >> input;
 
 	if(input == "q"){
-		inGame = false;
+		inGame = false;	
+	
+	} else if(input == "d"){
+		int x, y;
+		std::cout << "Enter column and row where to dig: ";
+		std::cin >> x >> y;
+	} else if(input == "f"){
+		int x, y;
+		std::cout << "Enter column and row where to place flag: ";
+		std::cin >> x >> y;
 	} else {
 		std::cout << "Unknown command '" << input << "'.\n";
 	}
