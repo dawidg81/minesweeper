@@ -5,90 +5,90 @@
 #include <iostream>
 #include <string>
 
-void Game::initDiff(int diff) {
-    switch (diff) {
-        case 0:
-            boardWidth  = 9;
-            boardHeight = 9;
-            mines       = 9;
-            break;
-        case 1: 
-            boardWidth  = 16;
-            boardHeight = 16;
-            mines       = 12;
-            break;
-        case 2:
-            boardWidth  = 30;
-            boardHeight = 16;
-            mines       = 16;
-            break;
-        case 3:
-            std::cout << "Editing game parameters\n";
-            break;
-    }
+void Game::initDiff(int diff){
+	switch(diff){
+		case 0:
+			boardWidth  = 9;
+			boardHeight = 9;
+			mines       = 9;
+			break;
+		case 1: 
+			boardWidth  = 16;
+			boardHeight = 16;
+			mines       = 12;
+			break;
+		case 2:
+			boardWidth  = 30;
+			boardHeight = 16;
+			mines       = 16;
+			break;
+		case 3:
+			std::cout << "Editing game parameters\n";
+			break;
+	}
 }
 
-void Game::initBoard() {
-    // Bomb map (boolean): 0 or false is no bomb, 1 or true is bomb;
-    // clearing bomb map
-    for (int i = 0; i < boardHeight; i++) {
-        for (int j = 0; j < boardWidth; j++) {
-            for(int k = 0; k < mines; k++){
-                bombMap[i][j] = 0;
-            }
-        }
-    }
-
-    // initializing bomb map
-    for (int i = 0; i < boardHeight; i++) {
-        for (int j = 0; j < boardWidth; j++) {
-            for(int k = 0; k < mines; k++){
-                bombMap[i][j] = rand() % 2;
-            }
-        }
-    }
-    
-    // initializing tile map for display
-    for (int i = 0; i < boardHeight; i++) {
-        for (int j = 0; j < boardWidth; j++) {
-		// DEBUG: seeing bombs
-		if(bombMap[i][j] == true){
-			tileMap[i][j] = 11;
+void Game::initBoard(){
+	// Bomb map (boolean): 0 or false is no bomb, 1 or true is bomb;
+	// clearing bomb map
+	for(int i=0; i < boardHeight; i++){
+		for(int j=0; j < boardWidth; j++){
+			bombMap[i][j] = 0;
 		}
-            tileMap[i][j] = 0;
-        }
-    }
+	}
+
+	// initializing bomb map
+	
+	for(int i=0; i < boardHeight; i++){
+		for(int j=0; j < boardWidth; j++){
+			for(int k = 0; k < mines; k++){
+				bombMap[i][j] = rand() % 2;
+			}
+		}
+	}
+
+	// initializing tile map for display
+	
+	for(int i=0; i < boardHeight; i++){
+		for(int j=0; j < boardWidth; j++){
+			tileMap[i][j] = 0;
+
+			// DEBUG: seeing bombs
+			if(bombMap[i][j] == true){
+				tileMap[i][j] = 11;
+			}
+		}
+	}
 }
 
 int Game::editDiff(){
+	std::cout << "Now editing custom difficulty" << std::endl;
 
-    std::cout << "Now editing custom difficulty" << std::endl;
+	std::cout << "Board width: ";
+	std::cin >> boardWidth;
 
-    std::cout << "Board width: ";
-    std::cin >> boardWidth;
+	if(boardWidth > MAX_W){
+		std::cout << "Board width can't be more than " << MAX_W << " tiles." << std::endl;
+		return 1;
+	}
 
-    if (boardWidth > MAX_W) {
-        std::cout << "Board width can't be more than " << MAX_W << " tiles." << std::endl;    
-        return 1;
-    }
+	std::cout << "Board height: ";
+	std::cin >> boardHeight;
 
-    std::cout << "Board height: ";
-    std::cin >> boardHeight;
+	if(boardHeight > MAX_H){
+		std::cout << "Board height can't be more than " << MAX_H << " tiles." << std::endl;
+		return 1;
+	}
 
-    if (boardHeight > MAX_H) {
-        std::cout << "Board height can't be more than " << MAX_H << " tiles." << std::endl;    
-        return 1;
-    }
+	std::cout << "Mines: ";
+	std::cin >> mines;
 
-    std::cout << "Mines: ";
-    std::cin >> mines;
+	if(mines > 8 || mines > (boardWidth * boardHeight)){
+		std::cout << "There can't be more than 8 or " << (boardWidth * boardHeight) << "mines." << std::endl;
+		return 1;
+	}
 
-    if (mines > 8 || mines > (boardWidth * boardHeight)) {
-        std::cout << "There can't be more than 8 or " << (boardWidth * boardHeight) << "mines." << std::endl;
-        return 1;
-    }
-
-    return 0;
+	return 0;
 }
 
 /* Tile map:
