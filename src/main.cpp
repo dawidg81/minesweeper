@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 	Game game;
-	bool inGame = false;
+	game.inGame = false;
 	int choice;
 
 	cout << "Welcome to minesweeper 0.1.0\n";
@@ -19,21 +19,23 @@ int main(){
 
 	if(choice == 1){
 		game.initDiff(0);
-		inGame = true;
+		game.inGame = true;
 	} else if(choice == 2){
 		game.initDiff(1);
-		inGame = true;
+		game.inGame = true;
 	} else if(choice == 3){
 		game.initDiff(2);
-		inGame = true;
+		game.inGame = true;
 	} else if(choice == 4){
 		game.editDiff();
-		inGame = true;
+		game.inGame = true;
 	}
 
-	while(inGame){
-		game.initBoard();
+	game.initBoard();
+
+	while(game.inGame){
 		game.displayBoard();
+		game.input();
 	}
 
 	return 0;

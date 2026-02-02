@@ -103,6 +103,12 @@ int Game::editDiff(){
 */
 
 void Game::displayBoard() {
+	#ifdef _WIN32
+	system("cls");
+	#else
+	system("clear");
+	#endif
+
     for (int i = 0; i < boardHeight; i++) {
         for (int j = 0; j < boardWidth; j++) {
             if (tileMap[i][j] == 0) {
@@ -130,3 +136,16 @@ void Game::displayBoard() {
         putchar('\n');
     }
 }
+
+void Game::input(){
+	std::string input;
+
+	std::cout << "game>";
+	std::cin >> input;
+
+	if(input == "q"){
+		inGame = false;
+	} else {
+		std::cout << "Unknown command '" << input << "'.\n";
+	}
+} 

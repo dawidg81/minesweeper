@@ -15,10 +15,13 @@ private:
     int mines;
 
 public:
+    bool inGame;
+
     int editDiff();
     void initDiff(int diff);
     void initBoard();
     void displayBoard();
+    void input();
 };
 
 #endif
