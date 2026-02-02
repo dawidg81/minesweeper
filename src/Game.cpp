@@ -115,36 +115,36 @@ void Game::displayBoard() {
 	system("clear");
 	#endif
 
-    for (int i = 0; i < boardHeight; i++) {
-        for (int j = 0; j < boardWidth; j++) {
-            if (tileMap[i][j] == 0) {
-                putchar('#');
-            } else if(tileMap[i][j] == 1){
-                putchar('.');
-            } else if(tileMap[i][j] == 2){
-                putchar('1');
-            } else if(tileMap[i][j] == 3){
-                putchar('2');
-            } else if(tileMap[i][j] == 4){
-                putchar('3');
-            } else if(tileMap[i][j] == 5){
-                putchar('4');
-            } else if(tileMap[i][j] == 6){
-                putchar('5');
-            } else if(tileMap[i][j] == 7){
-                putchar('6');
-            } else if(tileMap[i][j] == 8){
-                putchar('7');
-            } else if(tileMap[i][j] == 9){
-                putchar('8');
-	    } else if(tileMap[i][j] == 10){
-		    putchar('X');
-	    } else if(tileMap[i][j] == 11){
-		    putchar('B');
-	    }
-        }
-        putchar('\n');
-    }
+	for(int i=0; i < boardHeight; i++){
+		for(int j = 0; j < boardWidth; j++){
+			if(tileMap[i][j] == 0){
+				putchar('#');
+			} else if(tileMap[i][j] == 1){
+				putchar('.');
+			} else if(tileMap[i][j] == 2){
+				putchar('1');
+			} else if(tileMap[i][j] == 3){
+				putchar('2');
+			} else if(tileMap[i][j] == 4){
+				putchar('3');
+			} else if(tileMap[i][j] == 5){
+				putchar('4');
+			} else if(tileMap[i][j] == 6){
+				putchar('5');
+			} else if(tileMap[i][j] == 7){
+				putchar('6');
+			} else if(tileMap[i][j] == 8){
+				putchar('7');
+			} else if(tileMap[i][j] == 9){
+				putchar('8');
+			} else if(tileMap[i][j] == 10){
+				putchar('X');
+			} else if(tileMap[i][j] == 11){
+				putchar('B');
+			}
+		}
+		putchar('\n');
+	}
 }
 
 void Game::input(){
