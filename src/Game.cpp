@@ -51,6 +51,10 @@ void Game::initBoard() {
     // initializing tile map for display
     for (int i = 0; i < boardHeight; i++) {
         for (int j = 0; j < boardWidth; j++) {
+		// DEBUG: seeing bombs
+		if(bombMap[i][j] == true){
+			tileMap[i][j] = 11;
+		}
             tileMap[i][j] = 0;
         }
     }
@@ -100,6 +104,7 @@ int Game::editDiff(){
 8 - revealed tile with 7 bomb around
 9 - revealed tile with 8 bomb around
 10 - flag
+11 - bomb (for DEBUGGING)
 
 */
 
@@ -134,6 +139,8 @@ void Game::displayBoard() {
                 putchar('8');
 	    } else if(tileMap[i][j] == 10){
 		    putchar('X');
+	    } else if(tileMap[i][j] == 11){
+		    putchar('B');
 	    }
         }
         putchar('\n');

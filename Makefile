@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra -O2
 
-SRC = src/main.cpp src/Game.cpp
+SRC = src/Game.cpp src/main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 TARGET = minesweeper
