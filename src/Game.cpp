@@ -99,6 +99,7 @@ int Game::editDiff(){
 7 - revealed tile with 6 bomb around
 8 - revealed tile with 7 bomb around
 9 - revealed tile with 8 bomb around
+10 - flag
 
 */
 
@@ -113,25 +114,27 @@ void Game::displayBoard() {
         for (int j = 0; j < boardWidth; j++) {
             if (tileMap[i][j] == 0) {
                 putchar('#');
-            } else if (tileMap[i][j] == 1) {
+            } else if(tileMap[i][j] == 1){
                 putchar('.');
-            } else if (tileMap[i][j] == 2) {
+            } else if(tileMap[i][j] == 2){
                 putchar('1');
-            } else if (tileMap[i][j] == 3) {
+            } else if(tileMap[i][j] == 3){
                 putchar('2');
-            } else if (tileMap[i][j] == 4) {
+            } else if(tileMap[i][j] == 4){
                 putchar('3');
-            } else if (tileMap[i][j] == 5) {
+            } else if(tileMap[i][j] == 5){
                 putchar('4');
-            } else if (tileMap[i][j] == 6) {
+            } else if(tileMap[i][j] == 6){
                 putchar('5');
-            } else if (tileMap[i][j] == 7) {
+            } else if(tileMap[i][j] == 7){
                 putchar('6');
-            } else if (tileMap[i][j] == 8) {
+            } else if(tileMap[i][j] == 8){
                 putchar('7');
-            } else if (tileMap[i][j] == 9) {
+            } else if(tileMap[i][j] == 9){
                 putchar('8');
-            }
+	    } else if(tileMap[i][j] == 10){
+		    putchar('X');
+	    }
         }
         putchar('\n');
     }
@@ -150,10 +153,12 @@ void Game::input(){
 		int x, y;
 		std::cout << "Enter column and row where to dig: ";
 		std::cin >> x >> y;
+		tileMap[x][y] = 1;
 	} else if(input == "f"){
 		int x, y;
 		std::cout << "Enter column and row where to place flag: ";
 		std::cin >> x >> y;
+		tileMap[x][y] = 10;
 	} else {
 		std::cout << "Unknown command '" << input << "'.\n";
 	}
