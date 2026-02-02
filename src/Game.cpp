@@ -80,7 +80,7 @@ int Game::editDiff(){
     std::cin >> mines;
 
     if (mines > 8 || mines > (boardWidth * boardHeight)) {
-        std::cout << "There can't be more than " << mines << " mines." << std::endl;    
+        std::cout << "There can't be more than 8 or " << (boardWidth * boardHeight) << "mines." << std::endl;
         return 1;
     }
 
