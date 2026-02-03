@@ -57,7 +57,7 @@ void Game::initBoard(){
 			// DEBUG: seeing bombs
 			// if(bombMap[i][j] == true){
 			//	tileMap[i][j] = 11;
-			// }
+			//}
 		}
 	}
 }
@@ -65,12 +65,6 @@ void Game::initBoard(){
 void Game::updateBoard(){
 	for(int x=0; x < boardWidth; x++){
 		for(int y=0; y < boardHeight; y++){
-			if(revealed[x][y] == false){
-				tileMap[x][y] = 0;
-			} else {
-				tileMap[x][y] = 1;
-			}
-
 			if(Game::bombCheck(x, y) == 0 && revealed[x][y] == true){
 				revealed[x-1][y+1] = true;
 				revealed[x][y+1] = true;

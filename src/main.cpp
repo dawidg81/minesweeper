@@ -34,9 +34,9 @@ int main(){
 	game.initBoard();
 
 	while(game.inGame){
-		game.updateBoard();
 		game.displayBoard();
 		game.input();
+		game.updateBoard();
 	}
 
 	return 0;
