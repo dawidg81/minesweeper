@@ -72,7 +72,14 @@ void Game::updateBoard(){
 			}
 
 			if(Game::bombCheck(x, y) == 0 && revealed[x][y] == true){
-				tileMap[x][y] = 1;
+				revealed[x-1][y+1] = true;
+				revealed[x][y+1] = true;
+				revealed[x+1][y+1] = true;
+				revealed[x-1][y] = true;
+				revealed[x+1][y] = true;
+				revealed[x-1][y-1] = true;
+				revealed[x][y-1] = true;
+				revealed[x+1][y-1] = true;
 			} else if(Game::bombCheck(x, y) == 1 && revealed[x][y] == true){
 				tileMap[x][y] = 2;
 			} else if(Game::bombCheck(x, y) == 2 && revealed[x][y] == true){
