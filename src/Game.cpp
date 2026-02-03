@@ -147,6 +147,10 @@ void Game::input(){
 	std::cout << "game> ";
 	std::cin >> cmd;
 
+	if(std::cin.fail()){
+		std::cout << "Input failed." << std::endl;
+	}
+
 	if(cmd == "q"){
 		inGame = false;
 		return;
