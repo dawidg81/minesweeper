@@ -66,6 +66,22 @@ void Game::updateBoard(){
 		for(int y=0; y < boardHeight; y++){
 			if(Game::bombCheck(x, y) == 0){
 				tileMap[x][y] = 1;
+			} else if(Game::bombCheck(x, y) == 1){
+				tileMap[x][y] = 2;
+			} else if(Game::bombCheck(x, y) == 2){
+				tileMap[x][y] = 3;
+			} else if(Game::bombCheck(x, y) == 3){
+				tileMap[x][y] = 4;
+			} else if(Game::bombCheck(x, y) == 4){
+				tileMap[x][y] = 5;
+			} else if(Game::bombCheck(x, y) == 5){
+				tileMap[x][y] = 6;
+			} else if(Game::bombCheck(x, y) == 6){
+				tileMap[x][y] = 7;
+			} else if(Game::bombCheck(x, y) == 7){
+				tileMap[x][y] = 8;
+			} else if(Game::bombCheck(x, y) == 8){
+				tileMap[x][y] = 9;
 			}
 		}
 	}
