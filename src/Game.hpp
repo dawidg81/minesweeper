@@ -11,6 +11,7 @@ private:
     bool bombMap[MAX_H][MAX_W];
     int tileMap[MAX_H][MAX_W];
     bool revealed[MAX_H][MAX_W];
+    bool flag[MAX_H][MAX_W];
 
     int mines;
 
