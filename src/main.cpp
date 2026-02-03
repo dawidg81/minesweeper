@@ -31,6 +31,7 @@ int main(){
 		game.inGame = true;
 	}
 
+	srand(time(nullptr));
 	game.initBoard();
 
 	while(game.inGame){
