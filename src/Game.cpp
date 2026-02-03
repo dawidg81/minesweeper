@@ -147,6 +147,41 @@ void Game::displayBoard() {
 	}
 }
 
+void Game::bombCheck(){
+	for(int x=0; x < boardWidth; x++){
+		for(int y=0; y < boardHeight; y++){
+			if(tileMap[x][y] == 1){
+				int bombsAround[boardWidth][boardHeight];
+
+				if(bombMap[x-1][y-1] == true){
+					bombsAround[x][y]++;
+				}
+				if(bombMap[x][y-1] == true){
+					bombsAround[x][y]++;
+				}
+				if(bombMap[x+1][y-1] == true){
+					bombsAround[x][y]++;
+				}
+				if(bombMap[x-1][y] == true){
+					bombsAround[x][y]++;
+				}
+				if(bombMap[x+1][y] == true){
+					bombsAround[x][y]++;
+				}
+				if(bombMap[x-1][y+1] == true){
+					bombsAround[x][y]++;
+				}
+				if(bombMap[x][y+1] == true){
+					bombsAround[x][y]++;
+				}
+				if(bombMap[x+1][y+1] == true){
+					bombsAround[x][y]++;
+				}
+			}
+		}
+	}
+}
+
 void Game::input(){
 	std::string input;
 

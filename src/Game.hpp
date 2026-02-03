@@ -20,6 +20,7 @@ public:
     void initDiff(int diff);
     void initBoard();
     void displayBoard();
+    void bombCheck();
     void input();
 };
 
