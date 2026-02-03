@@ -189,5 +189,7 @@ void Game::input(){
 		}
 	}
 
-	if(cmd == "f")
+	if(cmd == "f"){
+		flag[y][x] = true;
+	}
 } 
