@@ -21,7 +21,7 @@ public:
     void initBoard();
     void updateBoard();
     void displayBoard();
-    int bombCheck();
+    int bombCheck(int x, int y);
     void input();
 };
 

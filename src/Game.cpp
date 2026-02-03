@@ -64,7 +64,7 @@ void Game::initBoard(){
 void Game::updateBoard(){
 	for(int x=0; x < boardWidth; x++){
 		for(int y=0; y < boardHeight; y++){
-			if(Game::bombCheck() == 0){
+			if(Game::bombCheck(x, y) == 0){
 				tileMap[x][y] = 1;
 			}
 		}
@@ -157,40 +157,36 @@ void Game::displayBoard() {
 	}
 }
 
-int Game::bombCheck(){
-	int bombsAround[boardWidth][boardHeight];
+int Game::bombCheck(int x, int y){
+	int bombsAround = 0;
 
-	for(int x=0; x < boardWidth; x++){
-		for(int y=0; y < boardHeight; y++){
-			if(tileMap[x][y] == 1){
-				if(bombMap[x-1][y-1] == true){
-					bombsAround[x][y]++;
-				}
-				if(bombMap[x][y-1] == true){
-					bombsAround[x][y]++;
-				}
-				if(bombMap[x+1][y-1] == true){
-					bombsAround[x][y]++;
-				}
-				if(bombMap[x-1][y] == true){
-					bombsAround[x][y]++;
-				}
-				if(bombMap[x+1][y] == true){
-					bombsAround[x][y]++;
-				}
-				if(bombMap[x-1][y+1] == true){
-					bombsAround[x][y]++;
-				}
-				if(bombMap[x][y+1] == true){
-					bombsAround[x][y]++;
-				}
-				if(bombMap[x+1][y+1] == true){
-					bombsAround[x][y]++;
-				}
-				return bombsAround[x][y];
-			}
+	if(tileMap[x][y] == 1){
+		if(bombMap[x-1][y-1] == true){
+			bombsAround++;
+		}
+		if(bombMap[x][y-1] == true){
+			bombsAround++;
+		}
+		if(bombMap[x+1][y-1] == true){
+			bombsAround++;
+		}
+		if(bombMap[x-1][y] == true){
+			bombsAround++;
+		}
+		if(bombMap[x+1][y] == true){
+			bombsAround++;
+		}
+		if(bombMap[x-1][y+1] == true){
+			bombsAround++;
+		}
+		if(bombMap[x][y+1] == true){
+			bombsAround++;
+		}
+		if(bombMap[x+1][y+1] == true){
+			bombsAround++;
 		}
 	}
+	return bombsAround;
 }
 
 void Game::input(){
