@@ -115,7 +115,7 @@ void Game::displayBoard() {
 	#endif
 
 	for(int y=0; y < boardHeight; y++){
-		for(int x; x < boardWidth; x++){
+		for(int x = 0; x < boardWidth; x++){
 			if(tileMap[y][x] == 0) putchar('#');
 			else if(tileMap[y][x] == 1) putchar('.');
 			else putchar('0' + tileMap[y][x] - 1);
