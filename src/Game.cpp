@@ -52,6 +52,7 @@ void Game::initBoard(){
 	for(int i=0; i < boardHeight; i++){
 		for(int j=0; j < boardWidth; j++){
 			tileMap[i][j] = 0;
+			revealed[i][j] = false;
 
 			// DEBUG: seeing bombs
 			// if(bombMap[i][j] == true){
@@ -64,23 +65,29 @@ void Game::initBoard(){
 void Game::updateBoard(){
 	for(int x=0; x < boardWidth; x++){
 		for(int y=0; y < boardHeight; y++){
-			if(Game::bombCheck(x, y) == 0){
+			if(revealed[x][y] == false){
+				tileMap[x][y] = 0;
+			} else {
 				tileMap[x][y] = 1;
-			} else if(Game::bombCheck(x, y) == 1){
+			}
+
+			if(Game::bombCheck(x, y) == 0 && revealed[x][y] == true){
+				tileMap[x][y] = 1;
+			} else if(Game::bombCheck(x, y) == 1 && revealed[x][y] == true){
 				tileMap[x][y] = 2;
-			} else if(Game::bombCheck(x, y) == 2){
+			} else if(Game::bombCheck(x, y) == 2 && revealed[x][y] == true){
 				tileMap[x][y] = 3;
-			} else if(Game::bombCheck(x, y) == 3){
+			} else if(Game::bombCheck(x, y) == 3 && revealed[x][y] == true){
 				tileMap[x][y] = 4;
-			} else if(Game::bombCheck(x, y) == 4){
+			} else if(Game::bombCheck(x, y) == 4 && revealed[x][y] == true){
 				tileMap[x][y] = 5;
-			} else if(Game::bombCheck(x, y) == 5){
+			} else if(Game::bombCheck(x, y) == 5 && revealed[x][y] == true){
 				tileMap[x][y] = 6;
-			} else if(Game::bombCheck(x, y) == 6){
+			} else if(Game::bombCheck(x, y) == 6 && revealed[x][y] == true){
 				tileMap[x][y] = 7;
-			} else if(Game::bombCheck(x, y) == 7){
+			} else if(Game::bombCheck(x, y) == 7 && revealed[x][y] == true){
 				tileMap[x][y] = 8;
-			} else if(Game::bombCheck(x, y) == 8){
+			} else if(Game::bombCheck(x, y) == 8 && revealed[x][y] == true){
 				tileMap[x][y] = 9;
 			}
 		}
