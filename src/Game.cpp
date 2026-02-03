@@ -34,7 +34,7 @@ void Game::initBoard(){
 			bombMap[y][x] = false;
 			revealed[y][x] = false;
 			tileMap[y][x] = 0;
-			flag[y][x] = false;
+			// flag[y][x] = false;
 		}
 	}
 
@@ -54,7 +54,7 @@ void Game::updateBoard(){
 	for(int y=0; y < boardHeight; y++){
 		for(int x=0; x < boardWidth; x++){
 			if(!revealed[y][x]) continue;
-			if(!flag[y][x]) continue;
+			// if(!flag[y][x]) continue;
 			else tileMap[y][x] = 10;
 
 			int bombs = bombCheck(x, y);
@@ -121,7 +121,7 @@ void Game::displayBoard() {
 		for(int x = 0; x < boardWidth; x++){
 			if(tileMap[y][x] == 0) putchar('#');
 			else if(tileMap[y][x] == 1) putchar('.');
-			else if(tileMap[y][x] == 10) putchar('F');
+			// else if(tileMap[y][x] == 10) putchar('F');
 			else putchar('0' + tileMap[y][x] - 1);
 		}
 		putchar('\n');
@@ -189,7 +189,7 @@ void Game::input(){
 		}
 	}
 
-	if(cmd == "f"){
-		flag[y][x] = true;
-	}
+	//if(cmd == "f"){
+	//	flag[y][x] = true;
+	//}
 } 

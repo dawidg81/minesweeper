@@ -7,7 +7,7 @@ int main(){
 	game.inGame = false;
 	int choice;
 
-	cout << "Welcome to minesweeper 0.1.0\n";
+	cout << "Welcome to minesweeper v0.2.0\n";
 	cout << "\n";
 	cout << "Select difficulty:\n"
 		"1. Easy\n"
