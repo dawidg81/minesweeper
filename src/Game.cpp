@@ -54,8 +54,18 @@ void Game::initBoard(){
 			tileMap[i][j] = 0;
 
 			// DEBUG: seeing bombs
-			if(bombMap[i][j] == true){
-				tileMap[i][j] = 11;
+			// if(bombMap[i][j] == true){
+			//	tileMap[i][j] = 11;
+			// }
+		}
+	}
+}
+
+void Game::updateBoard(){
+	for(int x=0; x < boardWidth; x++){
+		for(int y=0; y < boardHeight; y++){
+			if(Game::bombCheck() == 0){
+				tileMap[x][y] = 1;
 			}
 		}
 	}
@@ -147,12 +157,12 @@ void Game::displayBoard() {
 	}
 }
 
-void Game::bombCheck(){
+int Game::bombCheck(){
+	int bombsAround[boardWidth][boardHeight];
+
 	for(int x=0; x < boardWidth; x++){
 		for(int y=0; y < boardHeight; y++){
 			if(tileMap[x][y] == 1){
-				int bombsAround[boardWidth][boardHeight];
-
 				if(bombMap[x-1][y-1] == true){
 					bombsAround[x][y]++;
 				}
@@ -177,6 +187,7 @@ void Game::bombCheck(){
 				if(bombMap[x+1][y+1] == true){
 					bombsAround[x][y]++;
 				}
+				return bombsAround[x][y];
 			}
 		}
 	}

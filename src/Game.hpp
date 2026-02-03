@@ -19,8 +19,9 @@ public:
     int editDiff();
     void initDiff(int diff);
     void initBoard();
+    void updateBoard();
     void displayBoard();
-    void bombCheck();
+    int bombCheck();
     void input();
 };
 
