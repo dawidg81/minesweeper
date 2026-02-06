@@ -22,9 +22,6 @@ void Game::initDiff(int diff){
 			boardHeight = 16;
 			mines       = 16;
 			break;
-		case 3:
-			std::cout << "Editing game parameters\n";
-			break;
 	}
 }
 
