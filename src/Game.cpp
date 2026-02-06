@@ -12,7 +12,7 @@ void Game::initDiff(int diff){
 			boardHeight = 9;
 			mines       = 9;
 			break;
-		case 1: 
+		case 1:
 			boardWidth  = 16;
 			boardHeight = 16;
 			mines       = 12;
@@ -163,7 +163,7 @@ void Game::input(){
 
 	int x, y;
 	std::cin >> x >> y;
-	
+
 	if(x < 0 || x >= boardWidth || y < 0 || y >= boardHeight) return;
 	if(cmd == "d"){
 		if(bombMap[y][x]){
@@ -192,4 +192,4 @@ void Game::input(){
 	//if(cmd == "f"){
 	//	flag[y][x] = true;
 	//}
-} 
+}
