@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -O2
+CXXFLAGS = -std=c++17 -g -O0 -Wall -Wextra -O2
 
 SRC = src/Game.cpp src/main.cpp
 OBJ = $(SRC:.cpp=.o)
