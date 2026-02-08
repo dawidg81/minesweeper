@@ -10,6 +10,8 @@ private:
 
     bool bombMap[MAX_H][MAX_W];
     int tileMap[MAX_H][MAX_W];
+    bool revealedMap[MAX_H][MAX_W];
+    bool flagMap[MAX_H][MAX_W];
 
     int mines;
 
@@ -19,7 +21,9 @@ public:
     int editDiff();
     void initDiff(int diff);
     void initBoard();
+    void updateBoard();
     void displayBoard();
+    int bombCheck(int x, int y);
     void input();
 };
 
