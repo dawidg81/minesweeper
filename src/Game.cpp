@@ -29,9 +29,9 @@ void Game::initBoard(){
 	for(int y=0; y < boardHeight; y++){
 		for(int x=0; x < boardWidth; x++){
 			bombMap[y][x] = false;
-			revealed[y][x] = false;
+			revealedMap[y][x] = false;
 			tileMap[y][x] = 0;
-			// flag[y][x] = false;
+			flagMap[y][x] = false;
 		}
 	}
 
@@ -50,9 +50,8 @@ void Game::initBoard(){
 void Game::updateBoard(){
 	for(int y=0; y < boardHeight; y++){
 		for(int x=0; x < boardWidth; x++){
-			if(!revealed[y][x]) continue;
-			if(flag[y][x]) tileMap[y][x] = 10;
-			else tileMap[y][x] = 10;
+			if(!revealedMap[y][x]) continue;
+			else if(flagMap[y][x] == true) continue;
 
 			int bombs = bombCheck(x, y);
 			tileMap[y][x] = bombs == 0 ? 1 : bombs + 1;
@@ -170,16 +169,16 @@ void Game::input(){
 			return;
 		}
 
-		if(!revealed[y][x]){
-			revealed[y][x] = true;
+		if(!revealedMap[y][x]){
+			revealedMap[y][x] = true;
 			if(bombCheck(x, y) == 0){
 				for(int dy = -1; dy <= 1; dy++){
 					for(int dx = -1; dx <= 1; dx++){
 						int nx = x + dx;
 						int ny = y + dy;
 
-						if(nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && !revealed[ny][nx]){
-							revealed[ny][nx] = true;
+						if(nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && !revealedMap[ny][nx]){
+							revealedMap[ny][nx] = true;
 						}
 					}
 				}
@@ -188,10 +187,10 @@ void Game::input(){
 	}
 
 	if(cmd == "f"){
-		if(revealed[y][x]){
+		if(revealedMap[y][x]){
 			std::cout << "You can't place flag here.\n";
 		} else {
-			flag[y][x] = true;
+			flagMap[y][x] = true;
 		}
 	}
 }
