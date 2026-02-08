@@ -51,7 +51,7 @@ void Game::updateBoard(){
 	for(int y=0; y < boardHeight; y++){
 		for(int x=0; x < boardWidth; x++){
 			if(!revealed[y][x]) continue;
-			if(flag[y][x]) continue;
+			if(flag[y][x]) tileMap[y][x] = 10;
 			else tileMap[y][x] = 10;
 
 			int bombs = bombCheck(x, y);
