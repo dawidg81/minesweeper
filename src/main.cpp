@@ -42,6 +42,8 @@ int main(){
 		game.displayBoard();
 		game.input();
 		game.updateBoard();
+		game.hasWon();
+		cout << game.msg;
 		// cout << game.inGame;
 	}
 

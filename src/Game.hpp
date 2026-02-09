@@ -10,17 +10,18 @@ private:
     int boardWidth;
     int boardHeight;
 
-    std::string msg;
-
     bool bombMap[MAX_H][MAX_W];
     int tileMap[MAX_H][MAX_W];
     bool revealedMap[MAX_H][MAX_W];
     bool flagMap[MAX_H][MAX_W];
 
     int mines;
-
+    
 public:
     bool inGame;
+    bool hasWon();
+
+    std::string msg;
 
     int editDiff();
     void initDiff(int diff);

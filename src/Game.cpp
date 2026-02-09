@@ -11,9 +11,9 @@ void Game::initDiff(int diff)
 	switch(diff)
 	{
 		case 0:
-			boardWidth  = 9;
-			boardHeight = 9;
-			mines       = 9;
+			boardWidth  = 4;
+			boardHeight = 4;
+			mines       = 2;
 			break;
 		case 1:
 			boardWidth  = 16;
@@ -181,16 +181,36 @@ void Game::revealTile(int y, int x){
 		{
 			for(int dx = -1; dx <= 1; dx++)
 			{
+				if(dx == 0 && dy == 0) continue;
 				int nx = x + dx;
 				int ny = y + dy;
 
-				if(nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && !revealedMap[ny][nx]){
+				if(nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && !revealedMap[ny][nx])
+				{
 					revealedMap[ny][nx] = true;
 					revealTile(ny, nx);
 				}
 			}
 		}
 	}
+}
+
+bool Game::hasWon(){
+	int revealedTiles = 0;
+
+	for(int y=0; y < boardHeight; y++)
+	{
+		for(int x = 0; x < boardWidth; x++)
+		{
+			if(revealedMap[y][x]) revealedTiles++;
+		}
+	}
+
+	if(boardWidth * boardHeight - mines == revealedTiles){
+		std::cout << "You have won!\n";
+		inGame = false;
+	}
+	return true;
 }
 
 void Game::input()
