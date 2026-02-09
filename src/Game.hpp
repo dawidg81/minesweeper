@@ -17,11 +17,11 @@ private:
 
     int mines;
     
+    std::string msg;
+    
 public:
     bool inGame;
     bool hasWon();
-
-    std::string msg;
 
     int editDiff();
     void initDiff(int diff);
