@@ -1,9 +1,12 @@
+#include "Game.hpp"
+
 #include <ctime>
 #include <iostream>
-#include "Game.hpp"
+
 using namespace std;
 
 int main(){
+
 	Game game;
 	game.inGame = false;
 	int choice;
@@ -42,4 +45,5 @@ int main(){
 	}
 
 	return 0;
+	
 }

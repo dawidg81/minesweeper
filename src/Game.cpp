@@ -5,8 +5,10 @@
 #include <iostream>
 #include <string>
 
-void Game::initDiff(int diff){
-	switch(diff){
+void Game::initDiff(int diff)
+{
+	switch(diff)
+	{
 		case 0:
 			boardWidth  = 9;
 			boardHeight = 9;
@@ -23,11 +25,15 @@ void Game::initDiff(int diff){
 			mines       = 16;
 			break;
 	}
+
 }
 
-void Game::initBoard(){
-	for(int y=0; y < boardHeight; y++){
-		for(int x=0; x < boardWidth; x++){
+void Game::initBoard()
+{
+	for(int y=0; y < boardHeight; y++)
+	{
+		for(int x=0; x < boardWidth; x++)
+		{
 			bombMap[y][x] = false;
 			revealedMap[y][x] = false;
 			tileMap[y][x] = 0;
@@ -36,20 +42,25 @@ void Game::initBoard(){
 	}
 
 	int placed = 0;
-	while(placed < mines){
+	while(placed < mines)
+	{
 		int x = rand() % boardWidth;
 		int y = rand() % boardHeight;
 
-		if(!bombMap[y][x]){
+		if(!bombMap[y][x])
+		{
 			bombMap[y][x] = true;
 			placed++;
 		}
 	}
 }
 
-void Game::updateBoard(){
-	for(int y=0; y < boardHeight; y++){
-		for(int x=0; x < boardWidth; x++){
+void Game::updateBoard()
+{
+	for(int y=0; y < boardHeight; y++)
+	{
+		for(int x=0; x < boardWidth; x++)
+		{
 			if(!revealedMap[y][x]) continue;
 			else if(flagMap[y][x] == true) continue;
 
@@ -59,13 +70,15 @@ void Game::updateBoard(){
 	}
 }
 
-int Game::editDiff(){
+int Game::editDiff()
+{
 	std::cout << "Now editing custom difficulty" << std::endl;
 
 	std::cout << "Board width: ";
 	std::cin >> boardWidth;
 
-	if(boardWidth > MAX_W){
+	if(boardWidth > MAX_W)
+	{
 		std::cout << "Board width can't be more than " << MAX_W << " tiles." << std::endl;
 		return 1;
 	}
@@ -73,7 +86,8 @@ int Game::editDiff(){
 	std::cout << "Board height: ";
 	std::cin >> boardHeight;
 
-	if(boardHeight > MAX_H){
+	if(boardHeight > MAX_H)
+	{
 		std::cout << "Board height can't be more than " << MAX_H << " tiles." << std::endl;
 		return 1;
 	}
@@ -81,7 +95,8 @@ int Game::editDiff(){
 	std::cout << "Mines: ";
 	std::cin >> mines;
 
-	if(mines > 8 || mines > (boardWidth * boardHeight)){
+	if(mines > 8 || mines > (boardWidth * boardHeight))
+	{
 		std::cout << "There can't be more than 8 or " << (boardWidth * boardHeight) << "mines." << std::endl;
 		return 1;
 	}
@@ -106,29 +121,36 @@ int Game::editDiff(){
 
 */
 
-void Game::displayBoard() {
+void Game::displayBoard()
+{
 	#ifdef _WIN32
 	system("cls");
 	#else
 	system("clear");
 	#endif
 
-	for(int y=0; y < boardHeight; y++){
-		for(int x = 0; x < boardWidth; x++){
+	for(int y=0; y < boardHeight; y++)
+	{
+		for(int x = 0; x < boardWidth; x++)
+		{
 			if(tileMap[y][x] == 0) putchar('#');
 			else if(tileMap[y][x] == 1) putchar('.');
 			else if(tileMap[y][x] == 10) putchar('F');
 			else putchar('0' + tileMap[y][x] - 1);
 		}
+
 		putchar('\n');
 	}
 }
 
-int Game::bombCheck(int x, int y){
+int Game::bombCheck(int x, int y)
+{
 	int count = 0;
 
-	for(int dy = -1; dy <= 1; dy++){
-		for(int dx = -1; dx <= 1; dx++){
+	for(int dy = -1; dy <= 1; dy++)
+	{
+		for(int dx = -1; dx <= 1; dx++)
+		{
 			if(dx == 0 && dy == 0) continue;
 
 			int nx = x + dx;
@@ -139,16 +161,21 @@ int Game::bombCheck(int x, int y){
 			}
 		}
 	}
+
 	return count;
 }
 
-void Game::input(){
+void Game::input()
+{
 	std::string cmd;
+
 	std::cout << "game> ";
 	std::cin >> cmd;
 
-	if(std::cin.fail()){
+	if(std::cin.fail())
+	{
 		std::cout << "Input failed." << std::endl;
+
 		inGame = false;
 		return;
 	}
@@ -162,18 +189,25 @@ void Game::input(){
 	std::cin >> x >> y;
 
 	if(x < 0 || x >= boardWidth || y < 0 || y >= boardHeight) return;
-	if(cmd == "d"){
-		if(bombMap[y][x]){
+	if(cmd == "d")
+	{
+		if(bombMap[y][x])
+		{
 			std::cout << "BOOM! Game over\n";
 			inGame = false;
 			return;
 		}
 
-		if(!revealedMap[y][x]){
+		if(!revealedMap[y][x])
+		{
 			revealedMap[y][x] = true;
-			if(bombCheck(x, y) == 0){
-				for(int dy = -1; dy <= 1; dy++){
-					for(int dx = -1; dx <= 1; dx++){
+
+			if(bombCheck(x, y) == 0)
+			{
+				for(int dy = -1; dy <= 1; dy++)
+				{
+					for(int dx = -1; dx <= 1; dx++)
+					{
 						int nx = x + dx;
 						int ny = y + dy;
 
@@ -186,8 +220,10 @@ void Game::input(){
 		}
 	}
 
-	if(cmd == "f"){
-		if(revealedMap[y][x]){
+	if(cmd == "f")
+	{
+		if(revealedMap[y][x])
+		{
 			std::cout << "You can't place flag here.\n";
 		} else {
 			flagMap[y][x] = true;
