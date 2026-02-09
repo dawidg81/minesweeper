@@ -1,3 +1,4 @@
+#include <ctime>
 #include <iostream>
 #include "Game.hpp"
 using namespace std;
