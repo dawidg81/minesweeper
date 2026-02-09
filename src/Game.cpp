@@ -61,8 +61,12 @@ void Game::updateBoard()
 	{
 		for(int x=0; x < boardWidth; x++)
 		{
-			if(!revealedMap[y][x]) continue;
-			else if(flagMap[y][x] == true) continue;
+			if(flagMap[y][x] == true)
+			{
+				tileMap[y][x] = 10;
+				continue;
+			}
+			else if(!revealedMap[y][x]) continue;
 
 			int bombs = bombCheck(x, y);
 			tileMap[y][x] = bombs == 0 ? 1 : bombs + 1;
@@ -129,6 +133,8 @@ void Game::displayBoard()
 	system("clear");
 	#endif
 
+	std::cout << msg;
+
 	for(int y=0; y < boardHeight; y++)
 	{
 		for(int x = 0; x < boardWidth; x++)
@@ -165,6 +171,26 @@ int Game::bombCheck(int x, int y)
 	return count;
 }
 
+void Game::revealTile(int x, int y){
+	revealedMap[y][x] = true;
+
+	if(bombCheck(x, y) == 0)
+	{
+		for(int dy = -1; dy <= 1; dy++)
+		{
+			for(int dx = -1; dx <= 1; dx++)
+			{
+				int nx = x + dx;
+				int ny = y + dy;
+
+				if(nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && !revealedMap[ny][nx]){
+					revealedMap[ny][nx] = true;
+				}
+			}
+		}
+	}
+}
+
 void Game::input()
 {
 	std::string cmd;
@@ -187,13 +213,21 @@ void Game::input()
 
 	int x, y;
 	std::cin >> x >> y;
+	std::cout << x << y;
 
 	if(x < 0 || x >= boardWidth || y < 0 || y >= boardHeight) return;
+
 	if(cmd == "d")
 	{
+		if(flagMap[y][x])
+		{
+			msg = "You can't dig on flag.\n";
+			return;
+		}
+
 		if(bombMap[y][x])
 		{
-			std::cout << "BOOM! Game over\n";
+			msg = "BOOM! Game over\n";
 			inGame = false;
 			return;
 		}
@@ -224,7 +258,7 @@ void Game::input()
 	{
 		if(revealedMap[y][x])
 		{
-			std::cout << "You can't place flag here.\n";
+			msg = "You can't place flag on revealed tile.\n";
 		} else {
 			flagMap[y][x] = true;
 		}

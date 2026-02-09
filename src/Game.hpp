@@ -1,3 +1,5 @@
+#include <string>
+
 #pragma once
 
 class Game {
@@ -7,6 +9,8 @@ private:
 
     int boardWidth;
     int boardHeight;
+
+    std::string msg;
 
     bool bombMap[MAX_H][MAX_W];
     int tileMap[MAX_H][MAX_W];
@@ -23,7 +27,10 @@ public:
     void initBoard();
     void updateBoard();
     void displayBoard();
+
     int bombCheck(int x, int y);
+
+    void revealTile(int x, int y);
     void input();
 };
 
