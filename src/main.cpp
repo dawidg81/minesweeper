@@ -42,6 +42,7 @@ int main(){
 		game.displayBoard();
 		game.input();
 		game.updateBoard();
+		// cout << game.inGame;
 	}
 
 	return 0;

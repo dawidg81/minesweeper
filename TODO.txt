@@ -1,3 +1,4 @@
 Things to do:
 
-X - make safe tiles reveal recursively
+V - make safe tiles reveal recursively
+X - colors

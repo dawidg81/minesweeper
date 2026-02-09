@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <iostream>
+#include <ostream>
 #include <string>
 
 void Game::initDiff(int diff)
@@ -171,7 +172,7 @@ int Game::bombCheck(int x, int y)
 	return count;
 }
 
-void Game::revealTile(int x, int y){
+void Game::revealTile(int y, int x){
 	revealedMap[y][x] = true;
 
 	if(bombCheck(x, y) == 0)
@@ -185,6 +186,7 @@ void Game::revealTile(int x, int y){
 
 				if(nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && !revealedMap[ny][nx]){
 					revealedMap[ny][nx] = true;
+					revealTile(ny, nx);
 				}
 			}
 		}
@@ -198,6 +200,8 @@ void Game::input()
 	std::cout << "game> ";
 	std::cin >> cmd;
 
+	// std::cout << cmd;
+
 	if(std::cin.fail())
 	{
 		std::cout << "Input failed." << std::endl;
@@ -206,14 +210,14 @@ void Game::input()
 		return;
 	}
 
-	if(cmd == "q"){
+	if(cmd == "q")
+	{
 		inGame = false;
 		return;
 	}
 
 	int x, y;
 	std::cin >> x >> y;
-	std::cout << x << y;
 
 	if(x < 0 || x >= boardWidth || y < 0 || y >= boardHeight) return;
 
@@ -234,23 +238,7 @@ void Game::input()
 
 		if(!revealedMap[y][x])
 		{
-			revealedMap[y][x] = true;
-
-			if(bombCheck(x, y) == 0)
-			{
-				for(int dy = -1; dy <= 1; dy++)
-				{
-					for(int dx = -1; dx <= 1; dx++)
-					{
-						int nx = x + dx;
-						int ny = y + dy;
-
-						if(nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && !revealedMap[ny][nx]){
-							revealedMap[ny][nx] = true;
-						}
-					}
-				}
-			}
+			revealTile(y, x);
 		}
 	}
 

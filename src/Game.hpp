@@ -30,7 +30,7 @@ public:
 
     int bombCheck(int x, int y);
 
-    void revealTile(int x, int y);
+    void revealTile(int y, int x);
     void input();
 };
 
