@@ -6,35 +6,31 @@
 #include <ostream>
 #include <string>
 
-void Game::initDiff(int diff)
-{
-	switch(diff)
-	{
+void Game::initDiff(int diff) {
+	switch (diff) {
 		case 0:
-			boardWidth  = 4;
-			boardHeight = 4;
-			mines       = 2;
-			break;
+		boardWidth  = 9;
+		boardHeight = 9;
+		mines       = 9;
+		break;
+		
 		case 1:
-			boardWidth  = 16;
-			boardHeight = 16;
-			mines       = 12;
-			break;
-		case 2:
-			boardWidth  = 30;
-			boardHeight = 16;
-			mines       = 16;
-			break;
-	}
+		boardWidth  = 16;
+		boardHeight = 16;
+		mines       = 12;
+		break;
 
+		case 2:
+		boardWidth  = 30;
+		boardHeight = 16;
+		mines       = 16;
+		break;
+	}
 }
 
-void Game::initBoard()
-{
-	for(int y=0; y < boardHeight; y++)
-	{
-		for(int x=0; x < boardWidth; x++)
-		{
+void Game::initBoard() {
+	for (int y=0; y < boardHeight; y++) {
+		for (int x=0; x < boardWidth; x++) {
 			bombMap[y][x] = false;
 			revealedMap[y][x] = false;
 			tileMap[y][x] = 0;
@@ -43,37 +39,29 @@ void Game::initBoard()
 	}
 
 	int placed = 0;
-	while(placed < mines)
-	{
+	while (placed < mines) {
 		int x = rand() % boardWidth;
 		int y = rand() % boardHeight;
 
-		if(!bombMap[y][x])
-		{
+		if (!bombMap[y][x]) {
 			bombMap[y][x] = true;
 			placed++;
 		}
 	}
 }
 
-void Game::updateBoard()
-{
-	for(int y=0; y < boardHeight; y++)
-	{
-		for(int x=0; x < boardWidth; x++)
-		{
-			if (flagMap[y][x] == true)
-			{
+void Game::updateBoard() {
+	for (int y=0; y < boardHeight; y++) {
+		for (int x=0; x < boardWidth; x++) {
+			if (flagMap[y][x] == true) {
 				tileMap[y][x] = 10;
 				continue;
-			}
-			else if (!flagMap[y][x] && !revealedMap[y][x])
-			{
+			} else if (!flagMap[y][x] && !revealedMap[y][x]) {
 				tileMap[y][x] = 0;
 				continue;	
 			}
 			
-			else if(!revealedMap[y][x]) continue;
+			else if (!revealedMap[y][x]) continue;
 
 			int bombs = bombCheck(x, y);
 			tileMap[y][x] = bombs == 0 ? 1 : bombs + 1;
@@ -81,26 +69,27 @@ void Game::updateBoard()
 	}
 }
 
-int Game::editDiff()
-{
+int Game::editDiff() {
 	std::cout << "Now editing custom difficulty" << std::endl;
 
 	std::cout << "Board width: ";
 	std::cin >> boardWidth;
 
-	if(boardWidth > MAX_W)
-	{
+	if (boardWidth > MAX_W) {
 		std::cout << "Board width can't be more than " << MAX_W << " tiles." << std::endl;
 		return 1;
+	} else if (boardWidth < 4) {
+		std::cout << "Board width can't be less than 4 tiles." << std::endl;
 	}
 
 	std::cout << "Board height: ";
 	std::cin >> boardHeight;
 
-	if(boardHeight > MAX_H)
-	{
+	if(boardHeight > MAX_H) {
 		std::cout << "Board height can't be more than " << MAX_H << " tiles." << std::endl;
 		return 1;
+	} else if (boardHeight < 4) {
+		std::cout << "Board height can't be less than 4 tiles." << std::endl;
 	}
 
 	std::cout << "Mines: ";
@@ -110,6 +99,8 @@ int Game::editDiff()
 	{
 		std::cout << "There can't be more than 8 or " << (boardWidth * boardHeight) << "mines." << std::endl;
 		return 1;
+	} else if (mines < 2) {
+		std::cout << "There can't be less than 2 bombs." << std::endl;
 	}
 
 	return 0;
