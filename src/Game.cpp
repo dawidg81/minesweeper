@@ -62,11 +62,17 @@ void Game::updateBoard()
 	{
 		for(int x=0; x < boardWidth; x++)
 		{
-			if(flagMap[y][x] == true)
+			if (flagMap[y][x] == true)
 			{
 				tileMap[y][x] = 10;
 				continue;
 			}
+			else if (!flagMap[y][x] && !revealedMap[y][x])
+			{
+				tileMap[y][x] = 0;
+				continue;	
+			}
+			
 			else if(!revealedMap[y][x]) continue;
 
 			int bombs = bombCheck(x, y);
@@ -134,10 +140,18 @@ void Game::displayBoard()
 	system("clear");
 	#endif
 
-	std::cout << msg;
+	std::cout << msg << "\n  ";
+
+	for (int i = 0; i < boardHeight; i++) {
+		std::cout << i;
+	}
+
+	std::cout << "\n\n";
 
 	for(int y=0; y < boardHeight; y++)
 	{
+		std::cout << y << " ";
+	
 		for(int x = 0; x < boardWidth; x++)
 		{
 			if(tileMap[y][x] == 0) putchar('#');
@@ -148,6 +162,7 @@ void Game::displayBoard()
 
 		putchar('\n');
 	}
+	putchar('\n');
 }
 
 int Game::bombCheck(int x, int y)
@@ -267,6 +282,10 @@ void Game::input()
 		if(revealedMap[y][x])
 		{
 			msg = "You can't place flag on revealed tile.\n";
+		}
+
+		if(flagMap[y][x]){
+			flagMap[y][x] = false;
 		} else {
 			flagMap[y][x] = true;
 		}

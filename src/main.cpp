@@ -43,7 +43,7 @@ int main(){
 		game.input();
 		game.updateBoard();
 		game.hasWon();
-		cout << game.msg;
+		// cout << game.msg;
 		// cout << game.inGame;
 	}
 
