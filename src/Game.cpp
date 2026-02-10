@@ -85,7 +85,7 @@ int Game::editDiff() {
 	std::cout << "Board height: ";
 	std::cin >> boardHeight;
 
-	if(boardHeight > MAX_H) {
+	if (boardHeight > MAX_H) {
 		std::cout << "Board height can't be more than " << MAX_H << " tiles." << std::endl;
 		return 1;
 	} else if (boardHeight < 4) {
@@ -95,8 +95,7 @@ int Game::editDiff() {
 	std::cout << "Mines: ";
 	std::cin >> mines;
 
-	if(mines > 8 || mines > (boardWidth * boardHeight))
-	{
+	if (mines > 8 || mines > boardWidth * boardHeight) {
 		std::cout << "There can't be more than 8 or " << (boardWidth * boardHeight) << "mines." << std::endl;
 		return 1;
 	} else if (mines < 2) {
@@ -123,8 +122,7 @@ int Game::editDiff() {
 
 */
 
-void Game::displayBoard()
-{
+void Game::displayBoard() {
 	#ifdef _WIN32
 	system("cls");
 	#else
@@ -139,15 +137,13 @@ void Game::displayBoard()
 
 	std::cout << "\n\n";
 
-	for(int y=0; y < boardHeight; y++)
-	{
+	for (int y=0; y < boardHeight; y++) {
 		std::cout << y << " ";
 	
-		for(int x = 0; x < boardWidth; x++)
-		{
-			if(tileMap[y][x] == 0) putchar('#');
-			else if(tileMap[y][x] == 1) putchar('.');
-			else if(tileMap[y][x] == 10) putchar('F');
+		for (int x = 0; x < boardWidth; x++) {
+			if (tileMap[y][x] == 0) putchar('#');
+			else if (tileMap[y][x] == 1) putchar('.');
+			else if (tileMap[y][x] == 10) putchar('F');
 			else putchar('0' + tileMap[y][x] - 1);
 		}
 
@@ -156,20 +152,17 @@ void Game::displayBoard()
 	putchar('\n');
 }
 
-int Game::bombCheck(int x, int y)
-{
+int Game::bombCheck(int x, int y) {
 	int count = 0;
 
-	for(int dy = -1; dy <= 1; dy++)
-	{
-		for(int dx = -1; dx <= 1; dx++)
-		{
-			if(dx == 0 && dy == 0) continue;
+	for (int dy = -1; dy <= 1; dy++) {
+		for (int dx = -1; dx <= 1; dx++) {
+			if (dx == 0 && dy == 0) continue;
 
 			int nx = x + dx;
 			int ny = y + dy;
 
-			if(nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && bombMap[ny][nx]){
+			if (nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && bombMap[ny][nx]) {
 				count++;
 			}
 		}
@@ -178,21 +171,17 @@ int Game::bombCheck(int x, int y)
 	return count;
 }
 
-void Game::revealTile(int y, int x){
+void Game::revealTile(int y, int x) {
 	revealedMap[y][x] = true;
 
-	if(bombCheck(x, y) == 0)
-	{
-		for(int dy = -1; dy <= 1; dy++)
-		{
-			for(int dx = -1; dx <= 1; dx++)
-			{
-				if(dx == 0 && dy == 0) continue;
+	if (bombCheck(x, y) == 0) {
+		for (int dy = -1; dy <= 1; dy++) {
+			for (int dx = -1; dx <= 1; dx++) {
+				if (dx == 0 && dy == 0) continue;
 				int nx = x + dx;
 				int ny = y + dy;
 
-				if(nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && !revealedMap[ny][nx])
-				{
+				if (nx >= 0 && nx < boardWidth && ny >= 0 && ny < boardHeight && !revealedMap[ny][nx]) {
 					revealedMap[ny][nx] = true;
 					revealTile(ny, nx);
 				}
@@ -201,26 +190,24 @@ void Game::revealTile(int y, int x){
 	}
 }
 
-bool Game::hasWon(){
+bool Game::hasWon() {
 	int revealedTiles = 0;
 
-	for(int y=0; y < boardHeight; y++)
-	{
-		for(int x = 0; x < boardWidth; x++)
-		{
-			if(revealedMap[y][x]) revealedTiles++;
+	for (int y=0; y < boardHeight; y++) {
+		for (int x = 0; x < boardWidth; x++) {
+			if (revealedMap[y][x]) revealedTiles++;
 		}
 	}
 
-	if(boardWidth * boardHeight - mines == revealedTiles){
+	if (boardWidth * boardHeight - mines == revealedTiles) {
 		std::cout << "You have won!\n";
 		inGame = false;
 	}
+	
 	return true;
 }
 
-void Game::input()
-{
+void Game::input() {
 	std::string cmd;
 
 	std::cout << "game> ";
@@ -228,16 +215,14 @@ void Game::input()
 
 	// std::cout << cmd;
 
-	if(std::cin.fail())
-	{
+	if (std::cin.fail()) {
 		std::cout << "Input failed." << std::endl;
 
 		inGame = false;
 		return;
 	}
 
-	if(cmd == "q")
-	{
+	if (cmd == "q") {
 		inGame = false;
 		return;
 	}
@@ -245,37 +230,31 @@ void Game::input()
 	int x, y;
 	std::cin >> x >> y;
 
-	if(x < 0 || x >= boardWidth || y < 0 || y >= boardHeight) return;
+	if (x < 0 || x >= boardWidth || y < 0 || y >= boardHeight) return;
 
-	if(cmd == "d")
-	{
-		if(flagMap[y][x])
-		{
+	if (cmd == "d") {
+		if (flagMap[y][x]) {
 			msg = "You can't dig on flag.\n";
 			return;
 		}
 
-		if(bombMap[y][x])
-		{
+		if (bombMap[y][x]) {
 			msg = "BOOM! Game over\n";
 			inGame = false;
 			return;
 		}
 
-		if(!revealedMap[y][x])
-		{
+		if (!revealedMap[y][x]) {
 			revealTile(y, x);
 		}
 	}
 
-	if(cmd == "f")
-	{
-		if(revealedMap[y][x])
-		{
+	if (cmd == "f") {
+		if (revealedMap[y][x]) {
 			msg = "You can't place flag on revealed tile.\n";
 		}
 
-		if(flagMap[y][x]){
+		if (flagMap[y][x]) {
 			flagMap[y][x] = false;
 		} else {
 			flagMap[y][x] = true;
