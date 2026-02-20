@@ -1,4 +1,4 @@
 Things to do:
 
-V - make safe tiles reveal recursively
 X - colors
+X - numbering rows and columns in the plot
