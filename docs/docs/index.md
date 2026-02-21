@@ -2,13 +2,11 @@
 
 Welcome to minesweeper. This is documentation of this small project.
 
-## Locations of archivization
+## About
 
 The source code can be found on [Github](https://github.com/dawidg81/minesweeper).
 The same source code, often less updated and synchronized with the original on GitHub, can be found on [githost](http://81net.duckdns.org/githost/minesweeper.git) at [81net](http://81net.duckdns.org/).
 81net is less professionaly mainted website than GitHub. minesweeper on githost is only a mirror of what is being originally developed on GitHub.
-
-## About
 
 minesweeper has been written by [dawidg81](https://github.com/dawidg81).
 The project is being written in [C++](https://isocpp.org/) ([GNU Compiler Collection](https://gcc.gnu.org/)) and handled by [GNU Make](https://www.gnu.org/software/make/).
