@@ -11,7 +11,7 @@ The same source code, often less updated and synchronized with the original on G
 ## About
 
 minesweeper has been written by [dawidg81](https://github.com/dawidg81).
-The project is being written in [C++](https://isocpp.org/) ([GNU Compiler Collection][https://gcc.gnu.org/]) and handled by [GNU Make](https://www.gnu.org/software/make/).
+The project is being written in [C++](https://isocpp.org/) ([GNU Compiler Collection](https://gcc.gnu.org/)) and handled by [GNU Make](https://www.gnu.org/software/make/).
 
 ## Documentation
 
