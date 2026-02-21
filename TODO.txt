@@ -1,4 +1,4 @@
 Things to do:
 
 X - colors
-X - numbering rows and columns in the plot
+X - fix numbering rows and columns in the plot
